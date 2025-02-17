@@ -1,0 +1,3 @@
+/home/barsuk/cppcode/PacketSniffer/packetsniffer/build/CMakeFiles/packet_sniffer.dir
+/home/barsuk/cppcode/PacketSniffer/packetsniffer/build/CMakeFiles/edit_cache.dir
+/home/barsuk/cppcode/PacketSniffer/packetsniffer/build/CMakeFiles/rebuild_cache.dir

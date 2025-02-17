@@ -4,6 +4,7 @@ Install instruction.
 Requirement libs installation:  
 sudo apt-get update  
 sudo apt install libpcap-dev  
+sudo apt install libspdlog-dev  
 
 Packet Sniffer installation:  
 mkdir sniffer  

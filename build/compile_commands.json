@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/build",
+  "command": "/usr/bin/g++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB  -g -std=gnu++17 -o CMakeFiles/packet_sniffer.dir/src/main.cpp.o -c /home/barsuk/cppcode/PacketSniffer/packetsniffer/src/main.cpp",
+  "file": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/src/main.cpp",
+  "output": "CMakeFiles/packet_sniffer.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/build",
+  "command": "/usr/bin/g++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB  -g -std=gnu++17 -o CMakeFiles/packet_sniffer.dir/src/sniffer.cpp.o -c /home/barsuk/cppcode/PacketSniffer/packetsniffer/src/sniffer.cpp",
+  "file": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/src/sniffer.cpp",
+  "output": "CMakeFiles/packet_sniffer.dir/src/sniffer.cpp.o"
+},
+{
+  "directory": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/build",
+  "command": "/usr/bin/g++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB  -g -std=gnu++17 -o CMakeFiles/packet_sniffer.dir/src/loader.cpp.o -c /home/barsuk/cppcode/PacketSniffer/packetsniffer/src/loader.cpp",
+  "file": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/src/loader.cpp",
+  "output": "CMakeFiles/packet_sniffer.dir/src/loader.cpp.o"
+},
+{
+  "directory": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/build",
+  "command": "/usr/bin/g++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB  -g -std=gnu++17 -o CMakeFiles/packet_sniffer.dir/src/reswrite.cpp.o -c /home/barsuk/cppcode/PacketSniffer/packetsniffer/src/reswrite.cpp",
+  "file": "/home/barsuk/cppcode/PacketSniffer/packetsniffer/src/reswrite.cpp",
+  "output": "CMakeFiles/packet_sniffer.dir/src/reswrite.cpp.o"
+}
+]
