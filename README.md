@@ -17,4 +17,6 @@ You can check results of work
 sudo tail -n 1000 /var/log/sniffer/app_%date%.log  
 Example:  
 sudo tail -n 500 /var/log/sniffer/app_2025-02-18.log  
+System log message:  
+sudo tail -n 500 /var/log/sniffer/system.log  
 
