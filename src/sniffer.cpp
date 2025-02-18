@@ -49,15 +49,18 @@ struct ret dns_parse(const uint8_t* buffer, const uint8_t* dns_ptr, size_t data_
 static bool check_deny_domain(std::vector<std::string>& list, std::string value)
 {
     bool ind = false;
-    for (auto element : list)
+    auto size = list.size();
+    if (size > 0)
     {
-
-        if (value.find(element) != std::string::npos)
+        for (auto element : list)
         {
-            ind = true;
-        };
-    };
 
+            if (value.find(element) != std::string::npos)
+            {
+                ind = true;
+            };
+        };
+    }
     return ind;
 }
 

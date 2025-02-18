@@ -73,6 +73,8 @@
         "__tree": "cpp",
         "__bit_reference": "cpp",
         "__string": "cpp",
-        "__node_handle": "cpp"
+        "__node_handle": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }
