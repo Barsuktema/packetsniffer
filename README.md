@@ -7,14 +7,14 @@ sudo apt install libpcap-dev
 sudo apt install libspdlog-dev  
 
 Packet Sniffer installation:  
-mkdir sniffer  
-Copy deb packet to sniffer directory.  
-cd sniffer  
-sudo dpkg -i packet_sniffer.deb  
-
+Download sniffer.deb form /deb directory  
+sudo dpkg -i sniffer.deb  
 
 Check that system working.  
-sudo service packetsniffer status  
+sudo service sniffer status  
 
 You can check results of work   
-sudo cat /var/log/sniffer_result.log  
+sudo tail -n 1000 /var/log/sniffer/app_%date%.log
+Example:
+sudo tail -n 500 /var/log/sniffer/app_2025-02-18.log
+
