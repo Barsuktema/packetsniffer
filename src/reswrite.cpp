@@ -23,7 +23,6 @@ void Log::CfgReader(std::string& filepath)
         std::string line;
         while (std::getline(file, line))
         {
-
             if (line[0] != *"#" && line[0] != *" ")
             {
                 deny_domain.push_back(line); 
@@ -34,6 +33,4 @@ void Log::CfgReader(std::string& filepath)
     {
         system_logger_->error("Can`t load sniffer configuration file" + message);
     }
-    
-
 };

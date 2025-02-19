@@ -7,7 +7,6 @@
 Log sni_log("sniffer", "system");
 Sniffer ses;
 
-
 static void handlepacket(uint8_t* user, const struct pcap_pkthdr *hdr, const uint8_t* bytes)
 {
     try
@@ -24,7 +23,6 @@ static void handlepacket(uint8_t* user, const struct pcap_pkthdr *hdr, const uin
 
 int main() 
 { 
-
     int res;
     Interfaceloader test;
 
@@ -32,6 +30,7 @@ int main()
     test.interface(test.dev, sni_log);
     std::string file = "/etc/sniffer/sniffer.cfg";
     sni_log.CfgReader(file);
+
     if (test.pcap != NULL)
     {
         res = pcap_loop(test.pcap, -1, handlepacket, NULL);

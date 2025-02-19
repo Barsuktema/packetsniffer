@@ -49,6 +49,7 @@ void Interfaceloader::interface(std::string interface, class Log check)
     const char * inter = interface.c_str();
     pcap = pcap_open_live(inter, 262144, 1, 100, errbuf);
     std::cout << "Started packet capture: " + interface << "\n";    
+
     if (pcap == NULL)
     {
         check.system_logger_->error("Interface can`t load:" + (std::string)errbuf);

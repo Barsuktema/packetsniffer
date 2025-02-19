@@ -16,7 +16,8 @@ class Interfaceloader {
     void interface(std::string interface, class Log check);
 
     ~Interfaceloader() {
-        if (pcap != NULL){
+        if (pcap != NULL)
+        {
             pcap_close(pcap);
         }
     };
