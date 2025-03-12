@@ -8,6 +8,7 @@ $ sudo apt-get update
 $ sudo apt install libpcap-dev  
 $ sudo apt install libspdlog-dev  
 $ sudo apt install libfmt-dev
+$ sudo apt install libstdc++6
 
 ## Platforms
 
@@ -15,7 +16,7 @@ $ sudo apt install libfmt-dev
 
 ## Install application
 
-* Download sniffer.deb form /deb directory  
+Download sniffer.deb form /deb directory      
 
 $ sudo dpkg -i sniffer.deb  
 
