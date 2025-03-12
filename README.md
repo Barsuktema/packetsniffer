@@ -5,8 +5,9 @@ This project will help you to control users network traffic.
 ## Install requirements
 
 $ sudo apt-get update  
-$ sudo apt install, libpcap-dev  
+$ sudo apt install libpcap-dev  
 $ sudo apt install libspdlog-dev  
+$ sudo apt install libfmt-dev
 
 ## Platforms
 
@@ -24,12 +25,12 @@ $ sudo service sniffer status
 
 ## Configuration
 
-* You can change configuration file /etc/sniffer/sniffer.cfg
-* Here you can add domain name like ya.ru or drom.ru
-* When you have domain name in config file 
-* and will try to surf this internet resources,
-* this activity will write to log file as [ERROR].
-* Other activity will write to log file as [INFO].
+You can change configuration file /etc/sniffer/sniffer.cfg  
+Here you can add domain name like ya.ru or drom.ru.  
+When you have domain name in config file    
+and will try to surf this internet resources,   
+this activity will write to log file as [ERROR].    
+Other activity will write to log file as [INFO].    
 
 ## Log files   
 
