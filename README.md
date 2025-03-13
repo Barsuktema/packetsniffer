@@ -28,6 +28,8 @@ $ sudo cmake -B build
 $ cd build  
 $ sudo cmake --build ../build   
 
+Copy cfg file from /cfg/sniffer.cfg to /etc/sniffer/sniffer.cfg 
+
 * Start application
 
 $ sudo ./packet_sniffer 
