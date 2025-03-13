@@ -41,11 +41,9 @@ $ sudo service sniffer status
 ## Configuration
 
 You can change configuration file /etc/sniffer/sniffer.cfg  
-Here you can add domain name like ya.ru or drom.ru.  
-When you have domain name in config file    
-and will try to surf this internet resources,   
-this activity will write to log file as [ERROR].    
-Other activity will write to log file as [INFO].    
+Here you can add domain name like ya.ru or drom.ru.     
+When you have domain name in config file and will try to surf this internet resources,   
+this activity will write to log file as [ERROR]. Other activity will write to log file as [INFO].    
 
 ## Log files   
 
