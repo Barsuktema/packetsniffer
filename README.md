@@ -7,7 +7,7 @@ This project will help you to control users network traffic.
 $ sudo apt-get update  
 $ sudo apt install libpcap-dev  
 $ sudo apt install libspdlog-dev  
-$ sudo apt install libfmt-dev
+$ sudo apt install libfmt-dev   
 $ sudo apt install libstdc++6
 
 ## Platforms
