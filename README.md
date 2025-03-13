@@ -16,9 +16,21 @@ $ sudo apt install libstdc++6
 
 ## Install application
 
+* Package installation
+
 Download sniffer.deb form /deb directory      
 
 $ sudo dpkg -i sniffer.deb  
+
+* Manual building
+
+$ sudo cmake -B build   
+$ cd build  
+$ sudo cmake --build ../build   
+
+* Start application
+
+$ sudo ./packet_sniffer 
 
 ## Check application 
 
