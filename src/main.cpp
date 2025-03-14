@@ -36,12 +36,13 @@ int main()
     std::string file = "/etc/sniffer/sniffer.cfg";
     sni_log.CfgReader(std::ref(file));
 
-    if (test.pcap != NULL)
+    if (test.pcap != nullptr)
     {
-        res = pcap_loop(std::ref(test.pcap), -1, handlepacket, NULL);
+        res = pcap_loop(std::ref(test.pcap), -1, handlepacket, nullptr);
     } 
     else
     {
-        std::cout << "Interface not found" << "\n"; 
+        std::cout << "Interface not found" << "\n";
+        sni_log.system_logger_->error("Interface not found"); 
     }
 }

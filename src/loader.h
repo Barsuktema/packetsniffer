@@ -13,10 +13,10 @@ class Interfaceloader {
     Interfaceloader() =default;
     
     void command(std::string& cmd, Log check);
-    void interface(std::string& interface, Log check);
+    void interface(std::string& interface, Log& check);
 
     ~Interfaceloader() {
-        if (pcap != NULL)
+        if (pcap != nullptr)
         {
             pcap_close(pcap);
         }

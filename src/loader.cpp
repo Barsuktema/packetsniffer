@@ -18,7 +18,7 @@ void Interfaceloader::command(std::string& cmd, Log check)
         {
             while (!feof(stream))
             {
-                if (fgets(buffer, max_buffer, stream) != NULL)
+                if (fgets(buffer, max_buffer, stream) != nullptr)
                 {
                     if (static_cast<std::string>(buffer).find("default"))
                     {
@@ -44,13 +44,13 @@ void Interfaceloader::command(std::string& cmd, Log check)
 
 };
 
-void Interfaceloader::interface(std::string& interface, Log check)
+void Interfaceloader::interface(std::string& interface, Log& check)
 {
     const char * inter = interface.c_str();
     pcap = pcap_open_live(inter, 262144, 1, 100, errbuf);
     std::cout << "Started packet capture: " + interface << "\n";    
 
-    if (pcap == NULL)
+    if (pcap == nullptr)
     {
         check.system_logger_->error("Interface can`t load:" + (std::string)errbuf);
     }
