@@ -4,7 +4,10 @@
 #include <iostream>
 #include "reswrite.h"
 
-Log sni_log("sniffer", "system");
+std::string log_value1 = "sniffer";
+std::string log_value2 = "system";
+
+Log sni_log(std::ref(log_value1), std::ref(log_value2));
 
 Sniffer ses;
 

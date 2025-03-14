@@ -66,9 +66,9 @@ static bool check_deny_domain(std::vector<std::string>& list, std::string& value
 
 static void process_dns_packet(const uint8_t* payload, size_t _data_size, Log& check, uint32_t user_ip)
 {
-    const struct dns_header* dns_hdr = reinterpret_cast<const struct dns_header *>(payload);
+    const dns_header* dns_hdr = reinterpret_cast<const dns_header *>(payload);
 
-    struct ret name;
+    ret name;
 
     if (ntohs(dns_hdr->flags) == 0x8180)
     {
@@ -126,7 +126,7 @@ static void process_dns_packet(const uint8_t* payload, size_t _data_size, Log& c
 void Sniffer::udp_packet_process(const uint8_t* bytes, Log& check)
 {
 
-    struct iphdr* ip_header = (iphdr*)(bytes + sizeof(ethhdr));
+    iphdr* ip_header = (iphdr*)(bytes + sizeof(ethhdr));
 
     uint32_t abonent_ip = htonl(ip_header->saddr);
     uint32_t server_ip = htonl(ip_header->daddr);

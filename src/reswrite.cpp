@@ -7,7 +7,7 @@
 static const int file_size= 1024*1024*10;
 static const int file_count= 10;
 
-Log::Log(std::string name_app, std::string name_sys)
+Log::Log(std::string& name_app, std::string& name_sys)
 {
     system_logger_ = spdlog::rotating_logger_mt(name_sys, "/var/log/sniffer/system.log", file_size, file_count);
     app_logger_ = spdlog::daily_logger_mt(name_app, "/var/log/sniffer/app.log", 0, 00);
