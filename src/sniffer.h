@@ -42,8 +42,8 @@ class Sniffer
 
     Sniffer() = default;
 
-    static void udp_packet_process(const uint8_t* bytes, class Log& check);
-    static void tcp_packet_process(const uint8_t* bytes, std::unordered_map<uint32_t, std::array<uint8_t, 3000>>& tcp,std::unordered_map<uint32_t, size_t>& tcp_len, class Log& check);
+    static void udp_packet_process(const uint8_t* bytes, Log& check);
+    static void tcp_packet_process(const uint8_t* bytes, std::unordered_map<uint32_t, std::array<uint8_t, 3000>>& tcp,std::unordered_map<uint32_t, size_t>& tcp_len, Log& check);
 
     ~Sniffer() = default;
 };

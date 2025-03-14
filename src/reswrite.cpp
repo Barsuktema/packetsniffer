@@ -15,7 +15,7 @@ Log::Log(std::string name_app, std::string name_sys)
     app_logger_->set_level(spdlog::level::info);
 };
 
-void Log::CfgReader(std::string& filepath)
+void Log::CfgReader(const std::string& filepath)
 {
     try
     {
@@ -29,8 +29,9 @@ void Log::CfgReader(std::string& filepath)
             }
         }        
     }
-    catch(const std::string message)
+    catch(const std::exception& except)
     {
-        system_logger_->error("Can`t load sniffer configuration file" + message);
+        std::string error(except.what());
+        system_logger_->error("Can`t load sniffer configuration file: " + error);
     }
 };

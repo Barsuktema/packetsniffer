@@ -17,7 +17,7 @@ class Log
     Log() = default;
 
     Log(std::string name_app, std::string name_sys);
-    void CfgReader(std::string &filepath);
+    void CfgReader(const std::string &filepath);
 
     ~Log() = default;
 

@@ -12,8 +12,8 @@ class Interfaceloader {
 
     Interfaceloader() =default;
     
-    void command(std::string cmd, class Log check);
-    void interface(std::string interface, class Log check);
+    void command(std::string& cmd, Log check);
+    void interface(std::string& interface, Log check);
 
     ~Interfaceloader() {
         if (pcap != NULL)

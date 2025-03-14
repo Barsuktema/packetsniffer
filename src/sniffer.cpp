@@ -46,7 +46,7 @@ struct ret dns_parse(const uint8_t* buffer, const uint8_t* dns_ptr, size_t data_
     return dom;
 }
 
-static bool check_deny_domain(std::vector<std::string>& list, std::string value)
+static bool check_deny_domain(std::vector<std::string>& list, std::string& value)
 {
     bool ind = false;
     auto size = list.size();
@@ -64,7 +64,7 @@ static bool check_deny_domain(std::vector<std::string>& list, std::string value)
     return ind;
 }
 
-static void process_dns_packet(const uint8_t* payload, size_t _data_size, class Log& check, uint32_t user_ip)
+static void process_dns_packet(const uint8_t* payload, size_t _data_size, Log& check, uint32_t user_ip)
 {
     const struct dns_header* dns_hdr = reinterpret_cast<const struct dns_header *>(payload);
 
@@ -96,7 +96,7 @@ static void process_dns_packet(const uint8_t* payload, size_t _data_size, class 
                         uint32_t ipaddr = calc_data<uint32_t>(ptr + offset + 12);
                         offset += 16;
                         std::string tmp = "DNS: user ip-" + return_ip(user_ip)+ " ,server ip-" + return_ip(htonl(ipaddr)) +", domain name-" + name.domain+ ";";
-                        if (check_deny_domain(check.deny_domain, name.domain))
+                        if (check_deny_domain(std::ref(check.deny_domain), std::ref(name.domain)))
                         {
                             check.app_logger_->error(tmp);
                         }
@@ -123,10 +123,10 @@ static void process_dns_packet(const uint8_t* payload, size_t _data_size, class 
     }
 }
 
-void Sniffer::udp_packet_process(const uint8_t* bytes, class Log& check)
+void Sniffer::udp_packet_process(const uint8_t* bytes, Log& check)
 {
 
-    struct iphdr* ip_header = (struct iphdr*)(bytes + sizeof(struct ethhdr));
+    struct iphdr* ip_header = (iphdr*)(bytes + sizeof(ethhdr));
 
     uint32_t abonent_ip = htonl(ip_header->saddr);
     uint32_t server_ip = htonl(ip_header->daddr);
@@ -134,7 +134,7 @@ void Sniffer::udp_packet_process(const uint8_t* bytes, class Log& check)
     if (ip_header->protocol == IPPROTO_UDP)
     {
 
-        const struct udphdr* udp_header = reinterpret_cast<const struct udphdr*>(bytes + sizeof(ethhdr) + ip_header->ihl * 4);
+        const udphdr* udp_header = reinterpret_cast<const udphdr*>(bytes + sizeof(ethhdr) + ip_header->ihl * 4);
 
         uint16_t abonent_port = htons(udp_header->source);
         uint16_t server_port = htons(udp_header->dest);
@@ -195,14 +195,14 @@ std::string tls_read_sni(const uint8_t* payload, std::unordered_map<uint32_t, st
 
 void Sniffer::tcp_packet_process(const uint8_t* bytes, std::unordered_map<uint32_t, std::array<uint8_t, 3000>>& ses, std::unordered_map<uint32_t, size_t>& ses_tcp_len,class Log& check)
 {
-    struct iphdr* ip_header = (struct iphdr*)(bytes + sizeof(struct ethhdr));
+    iphdr* ip_header = (iphdr*)(bytes + sizeof(ethhdr));
 
     uint32_t abonent_ip = htonl(ip_header->saddr);
     uint32_t server_ip = htonl(ip_header->daddr);
 
     if (ip_header->protocol == IPPROTO_TCP)
     {
-        const struct tcphdr* tcp_head = reinterpret_cast<const struct tcphdr*>(bytes + sizeof(ethhdr) + (ip_header->ihl * 4));
+        const tcphdr* tcp_head = reinterpret_cast<const tcphdr*>(bytes + sizeof(ethhdr) + (ip_header->ihl * 4));
 
         uint16_t abonent_port = htons(tcp_head->source);
         uint16_t server_port = htons(tcp_head->dest);

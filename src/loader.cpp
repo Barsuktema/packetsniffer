@@ -4,7 +4,7 @@
 #include "reswrite.h"
 #include "spdlog/spdlog.h"
 
-void Interfaceloader::command(std::string cmd, class Log check)
+void Interfaceloader::command(std::string& cmd, Log check)
 {
     try
     {
@@ -44,7 +44,7 @@ void Interfaceloader::command(std::string cmd, class Log check)
 
 };
 
-void Interfaceloader::interface(std::string interface, class Log check)
+void Interfaceloader::interface(std::string& interface, Log check)
 {
     const char * inter = interface.c_str();
     pcap = pcap_open_live(inter, 262144, 1, 100, errbuf);
